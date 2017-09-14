@@ -1,0 +1,22 @@
+﻿<Window x:Class="Asdrubals.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Asdrubals"
+        mc:Ignorable="d"
+        Title="Os Asdrubals" Height="600" Width="800" ResizeMode="NoResize" KeyDown="MainCanvas_KeyDown" KeyUp="Window_KeyUp">
+    <Grid>
+        <Canvas x:Name="MainCanvas" Margin="15">
+            <Canvas.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF9BD1DC" Offset="0"/>
+                    <GradientStop Color="#FF6AAAB8" Offset="0.987"/>
+                </RadialGradientBrush>
+            </Canvas.Background>
+        </Canvas>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF002EFF" FontWeight="Bold" FontSize="24"/>
+        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Foreground="#FF0CFF00" FontWeight="Bold" FontSize="24"/>
+
+    </Grid>
+</Window>
