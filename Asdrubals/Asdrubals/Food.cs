@@ -43,7 +43,7 @@ namespace Asdrubals {
             finalImage.Width = Width;
             BitmapImage logo = new BitmapImage();
             logo.BeginInit(); //pack://application:,,,/AssemblyName;component/Resources/logo.png 
-            logo.UriSource = new Uri(@"C:\Users\Felipe\Source\Repos\asdrubals\Asdrubals\Asdrubals\Resources\food.png");
+            logo.UriSource = new Uri(@"C:\Users\fmunh\Source\Repos\asdrubals-ai\Asdrubals\Asdrubals\Resources\food.png");
             logo.EndInit();
             finalImage.Source = logo;
             return finalImage;

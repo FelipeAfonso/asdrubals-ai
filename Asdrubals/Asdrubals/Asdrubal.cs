@@ -45,17 +45,21 @@ namespace Asdrubals {
         public double velocityX = 0;
         public double velocityY = 0;
 
+        public string Name { get; set; }
+
         public Brain brain;
 
         private double velocityIncrease;
         private double velocityDecay;
         private Image img;
 
-        public Asdrubal(double velocityIncrease, double velocityDecay) {
+
+        public Asdrubal(double velocityIncrease, double velocityDecay, string name) {
             this.img = getImg();
             this.velocityIncrease = velocityIncrease;
             this.velocityDecay = velocityDecay;
             this.brain = new Brain();
+            this.Name = name;
         }
 
         public Rectangle Draw() {
@@ -72,7 +76,9 @@ namespace Asdrubals {
                 var r = new Rectangle() {
                     Fill = new ImageBrush(img.Source),
                     Width = this.Width, Height = this.Height,
-                    Margin = new System.Windows.Thickness(X, Y, 0, 0)
+                    Margin = new System.Windows.Thickness(X, Y, 0, 0),
+                    Opacity = (Hunger < 200) ? ((Hunger < 100) ? 50 : 75 ): 100
+                    
                 };
 
                 r.Tag = "Asdrubal";
@@ -136,7 +142,7 @@ namespace Asdrubals {
             finalImage.Width = 80;
             BitmapImage logo = new BitmapImage();
             logo.BeginInit(); //pack://application:,,,/AssemblyName;component/Resources/logo.png 
-            logo.UriSource = new Uri(@"C:\Users\Felipe\Source\Repos\asdrubals\Asdrubals\Asdrubals\Resources\asdrubal.png");
+            logo.UriSource = new Uri(@"C:\Users\fmunh\Source\Repos\asdrubals-ai\Asdrubals\Asdrubals\Resources\asdrubal.png");
             logo.EndInit();
             finalImage.Source = logo;
             return finalImage;

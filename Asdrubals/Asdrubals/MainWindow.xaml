@@ -5,18 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Asdrubals"
         mc:Ignorable="d"
-        Title="Os Asdrubals" Height="600" Width="800" ResizeMode="NoResize" KeyDown="MainCanvas_KeyDown" KeyUp="Window_KeyUp">
+        Title="Os Asdrubals" Height="600" Width="800" ResizeMode="NoResize">
     <Grid>
-        <Canvas x:Name="MainCanvas" Margin="15">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF00F3FF" Offset="0"/>
+                <GradientStop Color="#FF00AEFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Canvas x:Name="MainCanvas" Margin="15" Visibility="Collapsed">
             <Canvas.Background>
                 <RadialGradientBrush>
-                    <GradientStop Color="#FF9BD1DC" Offset="0"/>
-                    <GradientStop Color="#FF6AAAB8" Offset="0.987"/>
+                    <GradientStop Color="#FFD4F8FF" Offset="0"/>
+                    <GradientStop Color="#FFAAE5F1" Offset="0.987"/>
                 </RadialGradientBrush>
             </Canvas.Background>
         </Canvas>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF002EFF" FontWeight="Bold" FontSize="24"/>
-        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top" Foreground="#FF0CFF00" FontWeight="Bold" FontSize="24"/>
+        <Grid x:Name="MainMenu" Margin="15">
+            <Label Content="Asdrubals" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="72" FontWeight="Bold" Foreground="White"/>
+            <ListBox x:Name="PlayerList" HorizontalAlignment="Left" Height="209" Margin="10,10,0,0" VerticalAlignment="Top" Width="160" Background="#BFFFFFFF" BorderBrush="#FF00CCFF" Foreground="#FF444444" HorizontalContentAlignment="Center">
+                <Label Content="Jogadores" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="#FF0097FF"/>
+            </ListBox>
+            <Button Content="Start" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="250" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="80" BorderBrush="#FFBFF6FF" Background="#FFBFF7FF" FontWeight="Bold" FontSize="48" Foreground="#FF0097FF" Click="Button_Click"/>
+        </Grid>
 
     </Grid>
 </Window>
